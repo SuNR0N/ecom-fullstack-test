@@ -62,6 +62,6 @@ yarn serve
 
 ## Future improvements
 
-- [] Restructure backend code to have a clear seperation between routes and controllers
-- [] Increase test coverage (add unit tests for the backend, implement tests for sagas and client API)
-- [] Enhance styling
+- [ ] Restructure backend code to have a clear seperation between routes and controllers
+- [ ] Increase test coverage (add unit tests for the backend, implement tests for sagas and client API)
+- [ ] Enhance styling
