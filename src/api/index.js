@@ -1,14 +1,19 @@
 import fs from 'fs';
 import path from 'path';
 
-export default (app) => {
-    app.get('/api/products', (req, res) => {
-        fs.readFile((path.resolve(__dirname, './products.json')), (err, resp) => {
-            if (err) {
-                res.send(500, 'Something went wrong');
-            }
+import { promisify } from 'util';
 
-            res.send(resp);
-        });
-    });
-};
+const readFileAsync = promisify(fs.readFile);
+
+export default (router) => {
+  router.get('/api/products', async (ctx) => {
+    try {
+      const fileContent = await readFileAsync(path.resolve(__dirname, './products.json'), 'utf8');
+      const jsonResponse = JSON.parse(fileContent);
+      ctx.body = jsonResponse;
+    } catch (e) {
+      ctx.status = 500;
+      ctx.body = 'Something went wrong';
+    };
+  });
+} 

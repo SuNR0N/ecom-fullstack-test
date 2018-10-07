@@ -1,0 +1,28 @@
+$break-small: 480px;
+$break-large: 768px;
+
+body {
+  background-color: #FFFFFF;
+  color: #888888;
+
+  main {
+    margin: auto;
+    max-width: 1024px;
+  }
+
+  ul {
+    padding: 0;
+    display: grid;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1rem;
+
+    @media screen and (max-width: $break-small) {
+      grid-template-columns: auto;
+    }
+
+    @media screen and (min-width: $break-small + 1) and (max-width: $break-large) {
+      grid-template-columns: auto auto;
+    }
+  }
+}

@@ -1,12 +1,33 @@
-import React from 'react';
-import '../stylesheets/listingPage.scss';
+import React, { Component } from 'react';
 
-const HomePage = () => {
+import '../stylesheets/homePage.scss';
+import { ProductCard } from '../client/components/ProductCard';
+
+export class HomePage extends Component {
+  productCardRenderer = (product, index) => (
+    <ProductCard product={product} key={index} />
+  )
+
+  componentDidMount() {
+    this.props.loadProducts();
+  }
+
+  render() {
+    const {
+      productCardRenderer,
+      props: {
+        products,
+      },
+    } = this;
+
     return (
-        <main>
-            Listing page
-        </main>
+      <main>
+        <ul>
+          {products.map(productCardRenderer)}
+        </ul>
+      </main>
     );
-};
+  }
+}
 
-export default HomePage;
+HomePage.defaultProps = { products: [] };

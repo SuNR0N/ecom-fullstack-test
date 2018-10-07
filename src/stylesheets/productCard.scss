@@ -1,0 +1,74 @@
+$base-border-color: #e7e8f1;
+$base-color: #3a4155;
+$label-bg-color: #ff2d15;
+$label-color: white;
+$button-color: #00ff00;
+
+.product-card {
+  $parent: &;
+  border: 2px solid $base-border-color;
+  display: flex;
+  flex-direction: column;
+  color: $base-color;
+  
+  &__image {
+    align-self: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    + #{$parent}__details {
+      margin-top: 2rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: $label-bg-color;
+    color: $label-color;
+    height: 2rem;
+    padding: 0 2rem;
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+  }
+
+  &__details {
+    padding: 0 2rem;
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+  }
+  
+  &__description {
+    align-self: center;
+    font-size: 1.25rem;
+    display: flex;
+    flex: 1 0 auto;
+  }
+
+  &__price {
+    &-value {
+      font-size: 1.25rem;
+      padding-left: .5rem;
+      font-weight: bold;
+    }
+  }
+
+  &__cta {
+    border: 5px solid $button-color;
+    margin: 0.5rem 2rem 2rem;
+    padding: 1rem 0;
+    font-weight: bold;
+    font-size: 1.25rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $button-color;
+    }
+  }
+}

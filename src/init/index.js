@@ -7,6 +7,6 @@ const config = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../.babelr
 
 require('babel-core/register')(config);
 require.extensions['.scss'] = () => {
-    return undefined;
+  return undefined;
 };
 require('./server');

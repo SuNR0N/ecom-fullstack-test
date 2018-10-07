@@ -1,10 +1,14 @@
-import React from 'react';
-import { Router, Route, hashHistory } from 'react-router';
+import { NotFoundPage } from '../views/NotFoundPage';
+import { HomePageConnected } from '../views/HomePageConnected';
 
-import HomePage from '../views/HomePage';
-
-export default (
-    <Router history={hashHistory}>
-        <Route path="/" component={HomePage}/>
-    </Router>
-);
+export const routes = [
+  {
+    component: HomePageConnected,
+    exact: true,
+    path: '/',
+  },
+  {
+    component: NotFoundPage,
+    path: '*',
+  },
+];

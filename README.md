@@ -46,3 +46,22 @@ yarn build:prod
 # Serve content from build folder
 yarn serve
 ```
+
+## Solution
+
+- I replaced _babel-preset-es2015_ with the more recent and recommended _babel-preset-env_ library to be able to use modern JS features (_.babelrc_ was updated accordingly)
+- I upgraded _react-router_ to v4 and changed the related rendering code on the server as I was more familiar with that version
+- I added _redux_ for state management using _sagas_
+- I replaced _express_ with _koa_ even though I've never used it before as I like the challenge :)
+- Implemented a _ProductCard_ component which represents a single product
+- Adjusted the styles of the _HomePage_ to fulfill the criterias for responsiveness by adding media queries
+- Implemented a _NotFoundPage_ which is being rendered a non matching route
+- Changed the implemented API to return the list of products as a JSON
+- Implemented some unit tests for the client application
+- Consolidated the dependencies as some of them were not even used
+
+## Future improvements
+
+- [] Restructure backend code to have a clear seperation between routes and controllers
+- [] Increase test coverage (add unit tests for the backend, implement tests for sagas and client API)
+- [] Enhance styling

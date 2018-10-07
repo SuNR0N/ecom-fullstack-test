@@ -1,15 +1,24 @@
 {
-    "ignore": [
-        "*.scss",
-        "/node_modules/"
+  "ignore": [
+    "*.scss",
+    "/node_modules/"
+  ],
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": "current",
+          "uglify": true
+        }
+      }
     ],
-    "presets": [
-        "es2015",
-        "react"
-    ],
-    "plugins": [
-        "transform-regenerator",
-        "transform-object-rest-spread",
-        "transform-class-properties"
-    ]
+    "react"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-regenerator",
+    "transform-object-rest-spread",
+    "transform-class-properties"
+  ]
 }
